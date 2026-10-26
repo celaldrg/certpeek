@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        go: ["1.24", "stable"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+      - run: test -z "$(gofmt -l .)"
+      - run: go vet ./...
+      - run: go test -race -count=1 ./...
+      - name: Smoke test against real hosts
+        run: |
+          go build -o certpeek .
+          ./certpeek github.com expired.badssl.com || test $? -eq 2
