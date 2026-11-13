@@ -1,16 +1,30 @@
-# certpeek
+<p align="center">
+  <img src="assets/banner.webp" alt="certpeek" width="100%">
+</p>
 
 **Check TLS certificates from the command line: expiry, hostname, trust chain and TLS version, for one host or hundreds at once.** Exit codes made for cron and CI.
 
-[![CI](https://github.com/celaldrg/certpeek/actions/workflows/ci.yml/badge.svg)](https://github.com/celaldrg/certpeek/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/celaldrg/certpeek?sort=semver)](https://github.com/celaldrg/certpeek/releases)
-![Go](https://img.shields.io/badge/go-1.24%2B-00ADD8)
-![No dependencies](https://img.shields.io/badge/dependencies-stdlib%20only-brightgreen)
+<p align="center">
+  <a href="https://github.com/celaldrg/certpeek/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/celaldrg/certpeek/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <a href="https://github.com/celaldrg/certpeek/releases"><img alt="Release" src="https://img.shields.io/github/v/release/celaldrg/certpeek?sort=semver"></a>
+  <img alt="Go" src="https://img.shields.io/badge/go-1.24%2B-00ADD8">
+  <img alt="No dependencies" src="https://img.shields.io/badge/dependencies-stdlib%20only-brightgreen">
+</p>
 
 A single static binary, Go standard library only. It reports on broken certificates instead of just failing to connect, so you can see *why* a site is broken.
 
+<p align="center">
+  <img src="assets/terminal-demo.webp" alt="certpeek, real terminal output" width="860">
+  <br><sub>Real output: live TLS checks against public hosts on 2026-11-13.</sub>
+</p>
+
 ## Example
+
+<p align="center">
+  <img src="assets/demo.gif" alt="certpeek running in a terminal" width="860">
+  <br><sub>Recorded with <a href="https://github.com/charmbracelet/vhs">vhs</a>.</sub>
+</p>
 
 Real output (26 October 2026):
 
